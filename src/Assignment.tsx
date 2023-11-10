@@ -80,7 +80,7 @@ const Assignment = (props: any) => {
                                 <img width="24" height="24" src="https://assets.cars24.com/production/c2b-website/231107155239/js/1dbd974090c35e48bdb8c3273b07fb4e.svg" alt="User" />
                             </div>
                             <div className="relative">
-                                <div className="absolute h-20 top-[-20px]" ref={openAccountMenuRef} >
+                                <div className="absolute h-16 top-[-20px]" ref={openAccountMenuRef} >
                                     <div className="font-bold ">
                                         <div className="text-xs whitespace-nowrap text-[#465166]">
                                             Hello, Sign in
@@ -93,20 +93,24 @@ const Assignment = (props: any) => {
 
                                         </div>
                                     </div>
-                                </div>
 
 
-                                <div id={'navDropdown'} ref={accountMenuRef} className="h-full absolute top-[50px] right-0 h-20 w-24 start-0 opacity-0">
-                                    <div className="bg-white p-4 rounded-lg">
-                                        <div className="pt-1 whitespace-nowrap">
-                                            <div className="col-span-3">
-                                                <div className="grid grid-cols-2">
-                                                    this is 
+                                    <div id={'navDropdown'} ref={accountMenuRef} className="h-full absolute top-[65px] right-0 h-20 w-24 start-0 opacity-0">
+                                        <div className="bg-white p-4 rounded-lg">
+                                            <div className="pt-1 whitespace-nowrap">
+                                                <div className="col-span-3">
+                                                    <div className="grid grid-cols-2">
+                                                        this is
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
+
+
+
 
 
 
