@@ -45,7 +45,7 @@ const DropdownHover = (props: any) => {
         <div className="lg:pt-1  whitespace-nowrap">
             <div className="relative" >
                 
-                <div className="absolute h-20" ref={menuItemRef}>
+                <div className="absolute h-16" ref={menuItemRef}>
                     <div className="p-1 border-b-4 font-semibold rounded border-white text-sm flex" ref={menuItemBorderRef}>
                         {props.data.name}
                         {props.data.submenu && <div className="transition-tansform duration-300 ml-1" ref={rotateRef}>
