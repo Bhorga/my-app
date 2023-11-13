@@ -13,22 +13,22 @@ const DropdownHover = (props: any) => {
             
             menuItemBorderRef.current.classList.add('border-orange-500');
             menuItemBorderRef.current.classList.remove('border-white');
+            menuItemRef.current.classList.remove('h-10');
+            menuItemRef.current.classList.add('h-20');
             if(subMenuRef.current){
                 rotateRef.current.classList.add('rotate-180')
                 subMenuRef.current.classList.remove('hidden');
-                subMenuRef.current.classList.remove('opacity-0');
-                subMenuRef.current.classList.add('opacity-100');
             } 
         };
 
         const handleMouseLeave = () => {
             menuItemBorderRef.current.classList.remove('border-orange-500');
             menuItemBorderRef.current.classList.add('border-white');
+            menuItemRef.current.classList.add('h-10');
+            menuItemRef.current.classList.remove('h-20');
             if(subMenuRef.current){
                 rotateRef.current.classList.remove('rotate-180')
-                subMenuRef.current.classList.remove('opacity-100');
                 subMenuRef.current.classList.add('hidden');
-                subMenuRef.current.classList.add('opacity-0');
             }  
         };
 
@@ -42,10 +42,10 @@ const DropdownHover = (props: any) => {
     }, []);
 
     return (
-        <div className="lg:pt-1  whitespace-nowrap">
+        <div className="lg:pt-1 whitespace-nowrap">
             <div className="relative" >
                 
-                <div className="absolute h-16" ref={menuItemRef}>
+                <div className="absolute h-10" ref={menuItemRef}>
                     <div className="p-1 border-b-4 font-semibold rounded border-white text-sm flex" ref={menuItemBorderRef}>
                         {props.data.name}
                         {props.data.submenu && <div className="transition-tansform duration-300 ml-1" ref={rotateRef}>
@@ -55,7 +55,7 @@ const DropdownHover = (props: any) => {
 
                     </div>
 
-                    {props.data.submenu && <div id={'navDropdown'} ref={subMenuRef} className="h-full  absolute top-[65px] left-[-10px] opacity-0  w-max">
+                    {props.data.submenu && <div id={'navDropdown'} ref={subMenuRef} className="h-full absolute top-[65px] left-[-10px] w-max">
                         <div className="bg-white p-4 rounded-lg">
                             <div className="grid grid-cols-8 pt-1">
 
@@ -66,7 +66,8 @@ const DropdownHover = (props: any) => {
                                                 Popular Makes
                                             </div>
                                             {props.data.submenu?.popular?.map((el: any) => {
-                                                return <div className="my-1">
+                                                return <div className="my-1 hover:pl-2 hover:font-bold flex hover:flex-row-reverse hover:justify-between" style={{transition: 'padding-left 0.2s, font-weight 0.2s'}}>
+                                                    <img src="https://assets.cars24.com/production/c2b-website/231109160912/js/f4624986bdde266b8888d9bcb6bd11ed.svg" alt="" />
                                                     {el}
                                                 </div>
                                             })}

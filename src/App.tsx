@@ -1,11 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import Assignment from './Assignment';
 
 function App() {
   return (
-    <div className="App bg-white">
+    <div className="App">
      <Assignment></Assignment>
     </div>
   );
