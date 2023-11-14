@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import SubmenuItemHover from "./SubmenuItemHover";
 
 const DropdownHover = (props: any) => {
 
@@ -7,6 +8,8 @@ const DropdownHover = (props: any) => {
     const menuItemBorderRef = useRef<any>(null);
     const subMenuRef = useRef<any>(null);
     const rotateRef = useRef<any>(null);
+    const submenuItemRef = useRef<any>(null);
+    const arrowRef = useRef<any>(null);
 
     useEffect(() => {
         const handleMouseEnter = () => {
@@ -33,13 +36,15 @@ const DropdownHover = (props: any) => {
         };
 
         menuItemRef.current.addEventListener('mouseenter', handleMouseEnter);
-        menuItemRef.current.addEventListener('mouseleave', handleMouseLeave);
+        //menuItemRef.current.addEventListener('mouseleave', handleMouseLeave);
 
         return () => {
             menuItemRef.current.removeEventListener('mouseenter', handleMouseEnter);
-            menuItemRef.current.removeEventListener('mouseleave', handleMouseLeave);
+            //menuItemRef.current.removeEventListener('mouseleave', handleMouseLeave);
         };
     }, []);
+
+
 
     return (
         <div className="lg:pt-1 whitespace-nowrap">
@@ -55,7 +60,7 @@ const DropdownHover = (props: any) => {
 
                     </div>
 
-                    {props.data.submenu && <div id={'navDropdown'} ref={subMenuRef} className="h-full absolute top-[65px] left-[-10px] w-max">
+                    {props.data.submenu && <div id={'navDropdown'} ref={subMenuRef} className="h-full absolute top-[65px] left-[-10px] w-max hidden">
                         <div className="bg-white p-4 rounded-lg">
                             <div className="grid grid-cols-8 pt-1">
 
@@ -66,10 +71,7 @@ const DropdownHover = (props: any) => {
                                                 Popular Makes
                                             </div>
                                             {props.data.submenu?.popular?.map((el: any) => {
-                                                return <div className="my-1 hover:pl-2 hover:font-bold flex hover:flex-row-reverse hover:justify-between" style={{transition: 'padding-left 0.2s, font-weight 0.2s'}}>
-                                                    <img src="https://assets.cars24.com/production/c2b-website/231109160912/js/f4624986bdde266b8888d9bcb6bd11ed.svg" alt="" />
-                                                    {el}
-                                                </div>
+                                                return <SubmenuItemHover name={el} />
                                             })}
 
                                         </div>
