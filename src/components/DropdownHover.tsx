@@ -36,11 +36,11 @@ const DropdownHover = (props: any) => {
         };
 
         menuItemRef.current.addEventListener('mouseenter', handleMouseEnter);
-        //menuItemRef.current.addEventListener('mouseleave', handleMouseLeave);
+        menuItemRef.current.addEventListener('mouseleave', handleMouseLeave);
 
         return () => {
             menuItemRef.current.removeEventListener('mouseenter', handleMouseEnter);
-            //menuItemRef.current.removeEventListener('mouseleave', handleMouseLeave);
+            menuItemRef.current.removeEventListener('mouseleave', handleMouseLeave);
         };
     }, []);
 
